@@ -1,0 +1,27 @@
+{
+  "name": "frontend-task",
+  "version": "1.0.0",
+  "description": "Frontend task for Serokell hiring process",
+  "main": "index.js",
+  "scripts": {
+    "build:script": "tsc --p ts/ && uglifyjs dist/script.js -o dist/script.js",
+    "build:style": "sass scss/landing-page.scss dist/style.css --no-source-map --style compressed",
+    "watch:script": "tsc -w --p ts/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CherryGot/serokell-frontend-task.git"
+  },
+  "author": "Chakrapani Gautam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CherryGot/serokell-frontend-task/issues"
+  },
+  "homepage": "https://github.com/CherryGot/serokell-frontend-task#readme",
+  "devDependencies": {
+    "sass": "^1.32.8",
+    "typescript": "^4.2.3",
+    "uglify-js": "^3.13.3"
+  }
+}
