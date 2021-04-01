@@ -60,5 +60,12 @@
 
   <script src='https://requirejs.org/docs/release/2.3.6/minified/require.js'></script>
   <script src='/dist/script.js'></script>
+
+  <script>
+    require(['landing-page'], function(module) {
+      let landingPage = new module.LandingPage();
+      landingPage.initialisePageElements();
+    });
+  </script>
 </body>
 </html>
