@@ -1,0 +1,29 @@
+@import './vars';
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.mr-auto,
+.mx-auto {
+  margin-right: auto !important;
+}
+
+.ml-auto,
+.mx-auto {
+  margin-left: auto !important;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: calc(100% - 2rem);
+}
+
+@each $screen, $size in $container-sizes {
+  @media screen and (min-width: map-get($screen-sizes, $screen)) {
+    .container {
+      max-width: $size;
+    }
+  }
+}

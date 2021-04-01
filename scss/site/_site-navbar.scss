@@ -1,0 +1,103 @@
+.site-navbar {
+  $max-navbar-height: 64px;
+
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 0;
+  max-height: $max-navbar-height;
+
+  &.site-navbar--light {
+    background-color: white;
+
+    .site-navbar__navigation {
+      background-color: white;
+    }
+  }
+
+  .site-navbar__branding {
+    width: 120px;
+
+    &:hover {
+      border-bottom: 0;
+    }
+
+    .site-navbar__logo-img {
+      display: block;
+    }
+  }
+
+  .site-navbar__navigation {
+    position: fixed;
+    top: $max-navbar-height;
+    right: -$drawer-width;
+    height: calc(100% - #{$max-navbar-height});
+    width: $drawer-width;
+    display: flex;
+    transition: ease-in-out 0.2s;
+    z-index: 999;
+
+    &.site-navbar__navigation--active {
+      right: 0;
+    }
+  }
+
+  .site-navbar__menu-wrap {
+    width: 100%;
+  }
+
+  @each $screen, $size in $screen-sizes {
+    @media screen and (min-width: $size) {
+
+      &.site-navbar--expand-on-#{$screen} {
+        .site-navbar__navigation {
+          position: relative;
+          top: 0;
+          right: 0;
+          width: auto;
+          align-items: center;
+        }
+
+        .site-navbar__navigation-toggler {
+          display: none;
+        }
+      }
+    }
+
+    // to execute media query just before the screen size it reached
+    $maxwidth-threshold: $size * 99.99 / 100;
+
+    @media screen and (max-width: $maxwidth-threshold) {
+
+      &.site-navbar--expand-on-#{$screen} {
+        .site-navbar__menu-wrap {
+          flex-direction: column;
+          padding: 1rem;
+
+          .site-navbar__menu-item {
+            border-bottom: 1px solid $divider-color;
+            margin-left: 0;
+            margin-right: 0;
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .site-navbar__navigation-toggler {
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      background-color: darken(white, 5%);
+    }
+
+    &:active {
+      background-color: darken(white, 15%);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

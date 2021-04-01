@@ -1,0 +1,40 @@
+.site-header {
+  background-color: white;
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+
+  &.site-header--lifted {
+    box-shadow: 1px 1px 12px 6px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.hamburger-icon {
+  height: 24px;
+  width: 24px;
+
+  .hamburger-icon__ham {
+    background-color: black;
+    border-radius: 2px;
+    display: block;
+    height: 2px;
+    margin: 6px 0;
+    transform-origin: left;
+    transition: ease-in-out 0.2s;
+    width: 100%;
+  }
+
+  &.hamburger-icon--active {
+    .hamburger-icon__ham:first-child {
+      transform: rotate(45deg) translate(2px, -2px);
+    }
+
+    .hamburger-icon__ham:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-icon__ham:last-child {
+      transform: rotate(-45deg) translate(1px, 2px);
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.menu-wrap {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &.menu-wrap--row {
+    flex-direction: row;
+
+    .menu-wrap__item {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .menu-wrap__link {
+    border-bottom: none !important;
+    padding: 0.5rem 0.75rem;
+  }
+}
