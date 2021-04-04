@@ -1,0 +1,21 @@
+.site-footer {
+  background-color: black;
+  color: white;
+  padding-top: 2rem;
+
+  .site-footer__menu-wrap {
+    margin-bottom: 1rem;
+  }
+
+  .site-footer__link .bi {
+    margin-right: 0.25rem;
+  }
+}
+
+.copyright-block {
+  border-top: 1px solid $divider-color;
+
+  .copyright-block__text {
+    text-align: center;
+  }
+}

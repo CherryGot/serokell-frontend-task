@@ -1,0 +1,66 @@
+.grid {
+  .grid__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+
+    &.grid__row--flex-reverse {
+      flex-direction: column-reverse;
+    }
+
+    &.grid__row--flex-row {
+      flex-direction: row;
+    }
+
+    @each $screen, $size in $screen-sizes {
+      @media screen and (min-width: $size) {
+        &.grid__row--#{$screen}-flex-reverse {
+          flex-direction: column-reverse;
+        }
+
+        &.grid__row--#{$screen}-flex-row {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+
+
+  .grid__column {
+    flex-grow: 1;
+    flex-basis: 0;
+    width: 100%;
+
+    &.grid__column--100 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    @each $screen, $size in $screen-sizes {
+      @media screen and (min-width: $size) {
+        &.grid__column--#{$screen}-100 {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        &.grid__column--#{$screen}-50 {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+      }
+    }
+  }
+
+  .grid__column-content {
+    padding: .5rem;
+
+    &.grid__column-content--flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+}

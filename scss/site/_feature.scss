@@ -1,0 +1,23 @@
+.feature {
+
+
+  @each $screen, $size in $screen-sizes {
+    @media screen and (min-width: $size) {
+      &.feature--#{$screen}-top-padded {
+        padding-top: 4rem;
+      }
+
+      &.feature--#{$screen}-bottom-padded {
+        padding-bottom: 4rem;
+      }
+
+      &.feature--#{$screen}-left-padded {
+        padding-left: 4rem;
+      }
+
+      &.feature--#{$screen}-right-padded {
+        padding-right: 4rem;
+      }
+    }
+  }
+}

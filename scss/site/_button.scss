@@ -1,0 +1,22 @@
+.btn {
+  border-radius: 0.25rem;
+  display: inline-block;
+  font-size: 0.96rem;
+  padding: 0.6rem 1.2rem;
+  text-transform: uppercase;
+
+  &.btn--primary {
+    background-color: $primary-color !important;
+    border: 1px solid $primary-color !important;
+    color: white;
+    letter-spacing: 1px;
+
+    &:hover {
+      background-color: lighten($primary-color, 5%) !important;
+    }
+
+    &:active {
+      background-color: darken($primary-color, 5%) !important;
+    }
+  }
+}

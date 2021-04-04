@@ -1,0 +1,30 @@
+.masthead-content {
+  margin: 0.5rem auto;
+  max-width: 760px;
+  padding: 4rem 0;
+
+  @include on-screen-size-beyond(sm) {
+    margin: 4rem auto;
+    text-align: center;
+  }
+
+  @include on-screen-size-beyond(xl) {
+    margin: 3.6rem auto;
+  }
+
+  .masthead-content__title {
+    margin-bottom: 0;
+
+    @include on-screen-size-beyond(md) {
+      font-size: 3.2rem;
+    }
+  }
+
+  .masthead-content__subtext {
+    font-size: 1.15rem;
+  }
+
+  .masthead-content__action {
+    margin-top: .5rem;
+  }
+}

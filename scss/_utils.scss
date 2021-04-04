@@ -20,10 +20,28 @@
   max-width: calc(100% - 2rem);
 }
 
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
 @each $screen, $size in $container-sizes {
   @media screen and (min-width: map-get($screen-sizes, $screen)) {
     .container {
       max-width: $size;
     }
+  }
+}
+
+@mixin on-screen-size-beyond($screen-arg) {
+  @if (map-has-key($screen-sizes, $screen-arg)) {
+    @media screen and (min-width: map-get($screen-sizes, $screen-arg)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid screen size: #{$screen-arg}';
   }
 }

@@ -1,0 +1,26 @@
+.site-section {
+  &.site-section--fullpage {
+    height: calc(100vh - #{$max-navbar-height});
+  }
+
+  &.site-section--bg-image {
+    background-position: center;
+    background-repeat: no-repeat no-repeat;
+    background-size: cover;
+
+    &.site-section--bg-image-fixed {
+      background-attachment: fixed;
+    }
+  }
+
+  .site-section__inner {
+    height: calc(100% - 8rem);
+    padding: 4rem 0;
+  }
+
+  .site-section__title {
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

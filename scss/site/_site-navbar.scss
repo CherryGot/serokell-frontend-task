@@ -1,6 +1,4 @@
 .site-navbar {
-  $max-navbar-height: 64px;
-
   display: flex;
   flex-direction: row;
   padding: 1rem 0;
@@ -43,6 +41,11 @@
 
   .site-navbar__menu-wrap {
     width: 100%;
+    
+    .site-navbar__menu-link {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 
   @each $screen, $size in $screen-sizes {
