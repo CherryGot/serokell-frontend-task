@@ -1,6 +1,6 @@
 {
   "name": "frontend-task",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Frontend task for Serokell hiring process",
   "main": "index.js",
   "scripts": {
